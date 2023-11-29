@@ -601,3 +601,413 @@ const clockWise = (mat) => {
 // matrix rotation
 // console.log(clockWise(m))
 
+
+
+// Before Webpack
+
+// Grunt
+// Module  Bundler and make module
+
+
+// There are many types of webpack in
+//  make build and production build
+
+
+// Parcel,
+// Vite,
+// Turbopack
+//canvas
+// We can use JavaScript to draw the Graphics
+//canvas has Severals method to draw the graphics like
+
+
+// There are three types of module in node js  application
+// 1. Core module(Built in module)
+// 2. Local Module likewise(exports and imports)
+// 3. Third party module(likewise(mongoose))
+
+
+
+let arr2d = [[3, 4], [5, 2], [10, 1]]
+let sortedArr = arr2d.sort((a, b) => a[1] - b[1]);
+// console.log(sortedArr)
+
+
+let arr6 = [
+    { "id": 1, "x": 2, "y": 3 },
+    { "id": 2, "x": 3, "y": 6 }
+]
+let arr8 = [
+    { "id": 2, "x": 10, "y": 20 },
+    { "id": 3, "x": 0, "y": 0 }
+];
+let mergedArr = [...arr6, ...arr8];
+let mergedDuplicate = mergedArr.filter((item, index) => {
+    return mergedArr.findIndex(el => el.id === item.id) === index;
+})
+console.log(mergedDuplicate);
+
+let nums = [4, 1, 2, 1, 2];
+
+let ans = nums.filter((el, index) => {
+    return nums.indexOf(el) !== index;
+});
+console.log(ans);
+
+
+// let map = new Map();
+// for (let i = 0; i < nums.length; i++) {
+//     if (map.has(nums[i])) {
+//         map.set(nums[i], map.get(nums[i]) + 1);
+//     } else {
+//         map.set(nums[i], 1);
+//     }
+// }
+// map.forEach((value, key) => {
+//     if (value === 1) {
+//         console.log(key)
+//     }
+// })
+
+
+var singleNumber = function (nums) {
+
+    let map = new Map();
+    let ans = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (map.has(nums[i])) {
+            map.set(nums[i], map.get(nums[i]) + 1);
+        } else {
+            map.set(nums[i], 1);
+        }
+    }
+    map.forEach((value, key) => {
+        if (value === 1) {
+
+            ans = key;
+        }
+    });
+    return ans;
+
+};
+// console.log(singleNumber(nums));
+
+
+
+
+let nums1 = [3, 1]
+let nums2 = [2, 3]
+let nums3 = [1, 2]
+
+
+var twoOutOfThree = function (nums1, nums2, nums3) {
+    let ans = [];
+    nums1.forEach((el) => {
+        if (nums2.includes(el) || nums3.includes(el)) {
+            ans.push(el)
+        }
+    });
+
+    return ans;
+};
+
+console.log(twoOutOfThree(nums1, nums2, nums3));
+
+
+
+///
+
+
+let nums4 = [1, 2, 3, 2, 5]
+
+var sumOfUnique = function (nums) {
+
+    let map = new Map();
+
+    for (let i = 0; i < nums.length; i++) {
+        if (map.has(nums[i])) {
+            map.set(nums[i], map.get(nums[i]) + 1);
+        } else
+            map.set(nums[i], 1);
+    }
+    let ans = 0;
+    map.forEach((value, key) => {
+        if (value === 1) {
+            ans = ans + key;
+        }
+
+    });
+    return ans;
+
+};
+
+
+console.log(sumOfUnique(nums4))
+
+
+
+
+
+let s = "Hello how are you Contestant";
+let k = 4;
+var truncateSentence = function (s, k) {
+    let arraySplit = s.split(" ");
+    let wordSearch = arraySplit.slice(0, k);
+    return wordSearch.join(" ");
+};
+
+
+console.log(truncateSentence(s, k));
+
+let digits = [9];
+let digitNUm = parseInt(digits.join("")) + 1;
+let string = digitNUm.toString();
+
+console.log(string.split(""))
+
+
+
+//
+let n = 10;
+let callBack = ["call", "call", "call"];
+let call = [];
+
+callBack.forEach((el, index) => {
+    call.push(n + index);
+});
+
+
+console.log(call);
+
+
+function abc() {
+    return function () {
+        return 10;
+    }
+}
+console.log(abc()());
+
+//This is simple nuber coding Question
+
+let number = [[1, 2], [3, 4]];
+let sum = 0;
+number.forEach((el) => {
+    sum = sum + el[0] + el[1];
+});
+console.log(sum);
+
+
+
+let list1 = [
+    { name: "sbf", code: 1 },
+    { name: "bvn", code: 2 },
+    { name: "uth", code: 3 },
+    { name: "jkw", code: 5 },
+    { name: "esk", code: 9 },
+    { name: "njm", code: 10 },
+    { name: "rjm", code: 2 },
+    { name: "abv", code: 5 },
+    { name: "arv", code: 9 },
+    { name: "pjm", code: 11 }
+];
+
+
+let arr2 = [20, 40, 60, 15, 10, 11, 9]
+
+
+let sorted = list1.sort((a, b) => a.name - b.name ? 1 : -1);
+console.log(sorted);
+// console.log(sortedName);
+
+
+
+var items = [
+    { name: 'Edward', value: 21 },
+    { name: 'Sharpe', value: 37 },
+    { name: 'And', value: 45 },
+    { name: 'The', value: -12 },
+    { name: 'Magnetic', value: 13 },
+    { name: 'Zeros', value: 37 }
+];
+
+// sort by value
+const item = items.sort(function (a, b) {
+    return a.value - b.value
+});
+console.log(item);
+
+
+let num7 = [-2147483648, -2147483647]
+var findPeakElement = function (nums) {
+
+    let largetsNumber = Number.NEGATIVE_INFINITY
+    let index = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > largetsNumber) {
+            largetsNumber = nums[i];
+            index = i;
+        }
+    }
+    return index;
+};
+// console.log(findPeakElement(num7));
+
+
+/**
+ * const counter = createCounter(5)
+ * counter.increment(); // 6
+ * counter.reset(); // 5
+ * counter.decrement(); // 4
+ */
+
+
+let word1 = "abc";
+let word2 = "pqr";
+
+var mergeAlternately = function (word1, word2) {
+    let mergeString = [];
+    let word3 = word1.split('');
+    let word4 = word2.split('');
+    let i = 0, j = 0;
+    while (i < word3.length && j < word4.length) {
+        mergeString.push(word3[i]);
+        mergeString.push(word4[j]);
+        i++;
+        j++
+    }
+    return mergeString.join('');
+};
+
+// console.log(mergeAlternately(word1, word2));
+
+
+let num = "51230100"
+
+let numbe = num.split("");
+let arrNum = []
+numbe.forEach(el => {
+    if (el !== '0') arrNum.push(el);
+})
+// console.log(arrNum.join(''));
+
+
+// leedcode  question
+let sp = "aacbcb"
+
+var areOccurrencesEqual = function (s) {
+    let map = new Map();
+    let sArr = s.split("");
+
+    for (let i = 0; i < sArr.length; i++) {
+        if (map.has(sArr[i])) {
+            map.set(sArr[i], map.get(sArr[i]) + 1);
+        } else {
+            map.set(sArr[i], 1);
+        }
+    }
+
+    let newArr = [];
+    map.forEach((value, key) => {
+        console.log(`${value} and ${key}`);
+        newArr.push(value);
+
+    });
+    // console.log(newArr);
+
+    // let binary = false;
+    for (let i = 0; i < newArr.length - 1; i++) {
+        // console.log(newArr[i + 1]);
+        if (newArr[i] !== newArr[i + 1]) return false;
+    }
+    return true;
+};
+
+// 8 = "51230100";
+var removeTrailingZeros = function (num) {
+
+    let number = parseInt(num);
+    while (number % 10 === 0) {
+        number = number / 10;
+    }
+    console.log(number.toString())
+    return number.toString();
+};
+
+// removeTrailingZeros(nums8)
+
+
+
+
+// let nums9 = [1, 2, 3]
+// let nums10 = [2, 4, 6]
+
+// var findDifference = function (nums1, nums2) {
+//     let set1 = [...new Set(nums1)]
+//     let newArr = [];
+//     let newArr1 = [];
+//     let newArr2 = []
+//     nums1.forEach(el => {
+//         if (!nums2.includes(el)) {
+//             newArr1.push(el)
+//         }
+
+//     });
+//     newArr.push(newArr1);
+//     nums2.forEach(el => {
+//         if (!nums1.includes(el)) {
+//             newArr2.push(el)
+//         }
+
+//     });
+//     newArr.push(newArr2);
+//     return newArr;
+
+// };
+
+// findDifference(nums9, nums10)
+
+
+let grid = [[4, 3, 2, -1], [3, 2, 1, -1], [1, 1, -1, -2], [-1, -1, -2]];
+
+let ans1 = 0;
+grid.forEach(el => {
+    el.forEach(e => {
+        if (e < 0) ans1++;
+    })
+});
+// console.log(ans1);
+
+
+var addBinary = function (a, b) {
+    var dec = Number(parseInt(a, 2)) * Number(parseInt(b, 2));
+    console.log(Number(parseInt(a, 2),))
+    return dec.toString(2);
+};
+
+// console.log(addBinary('11', "11"));
+
+
+var majorityElement = function (nums) {
+    let n = nums.length;
+    let map = new Map();
+    for (let i = 0; i < nums.length; i++) {
+        if (map.has(nums[i])) {
+            map.set(nums[i], map.get(nums[i]) + 1);
+        } else {
+            map.set(nums[i], 1);
+        }
+    }
+    map.forEach((value, key) => {
+        // console.log(value, key);
+        let ans;
+        if (value > Math.floor(n / 2)) {
+            console.log(`${key} hi abdul`);
+            ans = key;
+        }
+    })
+    // console.log(ans)
+    return ans;
+};
+
+// console.log(majorityElement([3, 2, 3]));
